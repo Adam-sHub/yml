@@ -8,6 +8,6 @@ metadata:
 spec:
   containers:
     - name: myweb
-      images: kubeguide/tomvat-app:v1
+      images: kubeguide/tomcat-app:v1
       ports:
         - containerPort: 8080

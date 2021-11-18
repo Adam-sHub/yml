@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  rplicas: 1
+  selector:
+    matchLabels:
+      tier: frontend
+    matchExpressions:
+      - { key: tier,operator:In,values: [ frontend ] }
+  templete:
+    metadata:
+      labels:
+        app: app-demo
+        tier: frontend
+    spec:
+      containers:
+        - name: tomcat-demo
+          image: tomcat
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80

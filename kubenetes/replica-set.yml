@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: ReplicaSet
+metadata:
+  name: frontend
+spec:
+  selector:
+    matchLabels:
+      tier: frontend
+    matchExpressions:
+      - { key: tier,operator: In,value: [ frontend ] }
+  templete:
+    metadata:
+      labels:
+        app: app-demo
+        tier: frontend
+    spec:
+      containers:
+        - name: tomcat-demo
+          images: tomcat
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: GET_HOST_FROM
+              value: dns
+          ports:
+            - containerPort: 80

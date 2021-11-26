@@ -37,6 +37,8 @@ spec: # Pod中的容器的详细定义
       livenessProbe: # 对Pod内各容器健康检查的设置，当探测无响应几次之后，系统将自动重启该容器。可以设置的方法包括：exec、httpGet和tcpSocket。对一个容器仅需设置一种健康检查方法
         exec: # 对Pod内各容器健康检查的设置
           command: [ string ]            # exec方式需要指定的命令或者脚本
+            - cat
+            - /tmp/health  # 通过执行 “ cat /tmp/health ” 命令来判断一个容器是否运行正常 《Kubernetes权威指南》 p188
         httpGet: # 对Pod内各容器健康检查的设置，httpget方式。需指定path、port
           path: string
           port: string

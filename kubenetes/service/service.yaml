@@ -18,7 +18,7 @@ spec:                                    #详细描述
       port: int                            #服务监听的端口号
       targetPort: int                      #需要转发到后端Pod的端口号
       nodePort: int                        #当type = NodePort时，指定映射到物理机的端口号
-  status:                                #当spce.type=LoadBalancer时，设置外部负载均衡器的地址
+  status:                                #当spec.type=LoadBalancer时，设置外部负载均衡器的地址
     loadBalancer:                        #外部负载均衡器
       ingress:                           #外部负载均衡器
         ip: string                       #外部负载均衡器的Ip地址值

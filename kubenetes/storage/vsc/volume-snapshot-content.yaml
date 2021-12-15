@@ -1,0 +1,3 @@
+# VolumeSnapshot：绑定快照请求
+# VolumeSnapshotContent：存储卷快照
+# VolumeSnapshotClass：屏蔽VSC细节，类似于StorageClass

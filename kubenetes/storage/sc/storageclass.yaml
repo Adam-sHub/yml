@@ -1,0 +1,11 @@
+kind: StorageClass    # 动态资源供应
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: standard
+provisioner: kubernetes.io/aws-ebs
+parameters:
+  type: gp2
+  zone: us-east-1d
+  iopsPerGN: "10"
+  encrypted: true
+  kmsKeyId: ""    # 加密时的 Amazon Resource Name

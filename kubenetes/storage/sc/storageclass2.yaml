@@ -1,0 +1,9 @@
+kind: StorageClass    # 动态资源供应
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: gold
+  annotations:
+    storageclass.beta.kubernetes.io/is-default-class="ture"
+provisioner: kubernetes.io/gce-pd
+parameters:
+  type: pd-ssd

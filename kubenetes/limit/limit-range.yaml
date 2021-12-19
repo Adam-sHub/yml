@@ -32,4 +32,4 @@ spec:
       type: Container
 
 
-Min << Default Request << Default Limit << Max
+# Min << Default Request << Default Limit << Max

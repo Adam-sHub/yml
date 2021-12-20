@@ -33,3 +33,8 @@ spec:
 
 
 # Min << Default Request << Default Limit << Max
+
+# limits、requests：对单个资源对象限制
+# range：对所有资源对象限制；
+# QoS：优先级限制（通常自动完成）
+# resourceQuota：对所有资源对象进行配额
